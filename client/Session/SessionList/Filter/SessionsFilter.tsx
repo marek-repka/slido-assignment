@@ -19,6 +19,7 @@ const SessionsFilter = ({ filter, onChange }: Props) => {
       <h2>Search sessions</h2>
       <div>
         <input
+          role="input"
           type="text"
           placeholder="Search sessions..."
           value={filter.term}
@@ -28,6 +29,7 @@ const SessionsFilter = ({ filter, onChange }: Props) => {
       <div>
         <label htmlFor="session-type-select">Filter by session type:</label>
         <select
+          role="input"
           name="session-types"
           id="session-type-select"
           value={filter.type}
@@ -41,6 +43,7 @@ const SessionsFilter = ({ filter, onChange }: Props) => {
       <div>
         <label>From:</label>
         <input
+          role="input"
           type="datetime-local"
           value={filter.dateFrom}
           onChange={(e) => onInputChange(e.target.value, 'dateFrom')}
@@ -48,7 +51,12 @@ const SessionsFilter = ({ filter, onChange }: Props) => {
       </div>
       <div>
         <label>To:</label>
-        <input type="datetime-local" value={filter.dateTo} onChange={(e) => onInputChange(e.target.value, 'dateTo')} />
+        <input
+          role="input"
+          type="datetime-local"
+          value={filter.dateTo}
+          onChange={(e) => onInputChange(e.target.value, 'dateTo')}
+        />
       </div>
     </article>
   );
